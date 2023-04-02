@@ -7,15 +7,13 @@
 
   <!-- Employee list -->
   <table class="table table-bordered" *ngIf="Employee.length > 0">
-    <thead class="table-info">
+    <thead class="table">
       <tr>
         <th scope="col">categary ID</th>
         <th scope="col">product ID</th>
         <th scope="col">product Name</th>
         <th scope="col">categary name</th>
-        <!-- <th scope="col">Designation</th>
-        <th scope="col">Phone No</th> -->
-        <th scope="col center">Update</th>
+        <th scope="col center">Opration</th>
       </tr>
     </thead>
     <tbody>
@@ -24,16 +22,9 @@
         <th scope="row">{{ employee._id }}</th>
         <td>{{ employee.name }}</td>
         <td>{{ employee.categary }}</td>
-        <!-- <td>{{ employee.designation }}</td>
-        <td>{{ employee.phoneNumber }}</td> -->
-        <td class="text-center edit-block">
-          <span class="edit" [routerLink]="['/edit-employee/', employee._id]">
-            <button type="button" class="btn btn-success btn-sm">Edit</button>
-          </span>
-          <span class="delete" (click)="removeEmployee(employee, i)">
-            <button type="button" class="btn btn-danger btn-sm">Delete</button>
-          </span>
-        </td>
+        <th><i class="fa fa-trash" (click)="removeEmployee(employee, i)" style="font-size: 20px;color:red"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+        <i class="w3-larze w3-spin fa fa-refresh" style="size: 20px;color:red" [routerLink]="['/edit-employee/', employee._id]" ></i>
+      </th>
       </tr>
     </tbody>
   </table>

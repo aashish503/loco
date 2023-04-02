@@ -9,15 +9,6 @@ let Employee = new Schema({
    categary: {
     type: String
  },
-  //  email: {
-  //     type: String
-  //  },
-  //  designation: {
-  //     type: String
-  //  },
-  //  phoneNumber: {
-  //     type: Number
-  //  }
 }, {
    collection: 'employees'
 })
